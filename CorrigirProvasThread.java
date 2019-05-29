@@ -17,12 +17,7 @@ public class CorrigirProvasThread extends Thread {
     
     @Override
     public void run(){
-        DatagramPacket pctVai = new DatagramPacket(
-            pctVeio.getData(), //buffer
-            pctVeio.getLength(), //buffer.lenght
-            pctVeio.getAddress(), //InetAddres
-            pctVeio.getPort() //porta
-        );
+        DatagramPacket pctVai = new DatagramPacket(pctVeio.getData(), bufferpctVeio.getLength(),buffer.lenght,pctVeio.getAddress(),pctVeio.getPort());
         
         try {
             DatagramSocket destino = new DatagramSocket();
