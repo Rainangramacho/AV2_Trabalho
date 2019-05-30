@@ -16,7 +16,7 @@ public class CorrigirProvasClient {
 		
 		numQuestao = new int [5]; // 
 		numAlternativas = new int [5]; // 
-		respostas = new String [5]; // 
+		
 		resposta = new String [5];
 		
 		ArrayList<String> agenda = new ArrayList();
@@ -43,54 +43,30 @@ public class CorrigirProvasClient {
 		}
  */
 		
-		
-		
-		
-		
 		int i = 0;
 		int a = 0;
+		//int [] x = new int x;
         
         System.out.print("Informe a quantidade de questoes: ");
-        int qntQuestoes = input.nextInt();
-        
-        int[] questoes = new int[qntQuestoes];
+			int qntQuestoes = input.nextInt();
+			int[] questoes = new int[qntQuestoes];
+			
 		
 		for(i=0;i<qntQuestoes;i++){
-		System.out.print("Informe o número da questao: ");
-		numQuestao[i] = input.nextInt();
-		
-		System.out.print("Informe o número de alternativas dessa questao ");
-		numAlternativas[i] = input.nextInt();
-		
-			for(a=0;a<numAlternativas[i];a++){
+			System.out.print("Informe o número da questao: ");
+				numQuestao[i] = input.nextInt();
+			
+			System.out.print("Informe o número de alternativas dessa questao ");
+				numAlternativas[i] = input.nextInt();
+			
 			System.out.print("Informe a resposta:  ");
-			respostas[a] = input.next();
-			System.out.printf("Digitado:%s",respostas[a]);
-			resposta[i] += resposta[a];
-			
-			}
-			
-		System.out.printf("Teste:%s",resposta[i]);
+				respostas = new String [numAlternativas[i]]; // 
+				respostas[i] = input.next();
 		
+			System.out.printf("Teste:%s",respostas[i]);
+			
 		}
         
-		String str = "vvvfff";
-		char[] array = str.toCharArray();
-		StringBuilder result = new StringBuilder();
-		for (char c : array){
-			if (Character.isDigit(c)){
-				result.append(c);
-			}
-		}
-		System.out.println(result.toString());
-		
-		/*
-            TODO: 
-            Itera por todas as questões
-            Insere a quantidade de alternativas
-            Insere as alternativas
-            Itera de novo e concatena todo mundo
-			*/
         
     }
 }
