@@ -18,7 +18,7 @@ public class CorrigirProvasClient {
 		numAlternativas = new int [5]; // 
 		
 		resposta = new String [5];
-		
+		respostas = new String [10]; 
 		ArrayList<String> agenda = new ArrayList();
  
 		// [ B ] usando o método add() para gravar 4 contatos na agenda
@@ -56,11 +56,11 @@ public class CorrigirProvasClient {
 			System.out.print("Informe o número da questao: ");
 				numQuestao[i] = input.nextInt();
 			
-			System.out.print("Informe o número de alternativas dessa questao ");
+			System.out.printf("Informe o número de alternativas da questao %d: ",numQuestao[i]);
 				numAlternativas[i] = input.nextInt();
 			
 			System.out.print("Informe a resposta:  ");
-				respostas = new String [numAlternativas[i]]; // 
+				//respostas = new String [numAlternativas[i]]; 
 				respostas[i] = input.next();
 		
 			System.out.printf("Teste:%s",respostas[i]);
