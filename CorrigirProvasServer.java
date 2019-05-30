@@ -8,23 +8,35 @@ public class CorrigirProvasServer {
 
     public static void main(String[] args) {
         int porta = 6789;
-        DatagramSocket socket;
+        DatagramSocket dsocket;
         try {
-            socket = new DatagramSocket(porta);
+            dsocket = new DatagramSocket(porta);
 
-            System.out.printf("Servidor online e aguardando por cliente na porta %d!\n", socket.getLocalPort());
+            System.out.printf("Servidor online e aguardando por cliente na porta %d!\n", dsocket.getLocalPort());
             byte[] buffer = new byte[1024];
+			
             ArrayList<CorrigirProvasThread> threads = new ArrayList<>();
+			
+			
+			
 
             while (true) {
-                DatagramPacket pctVeio = new DatagramPacket(buffer, buffer.length);
-                socket.receive(pctVeio);
-                System.out.println("Requisição recebida do cliente: " + pctVeio.getAddress());
-
-                CorrigirProvasThread thread = new CorrigirProvasThread(pctVeio);
-                threads.add(thread);
-                thread.start();
+               DatagramPacket pctVeio = new DatagramPacket(buffer,buffer.length);
+			   dsocket.receive(pctVeio);
+				
+			   System.out.println("Recebi solicitacao do Cliente:" +pctVeio.getAddress());
+				
+			   CorrigirProvasThread thread = new CorrigirProvasThread(pctVeio);
+			   threads.add(thread);
+			   thread.start();
+			   
             }
+			
+			
+			
+			
+			
+			
         } catch (SocketException e) {
             System.err.println("Erro no Socket: " + e.getMessage());
         } catch (IOException e) {
