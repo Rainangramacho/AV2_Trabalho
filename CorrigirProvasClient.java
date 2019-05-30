@@ -21,17 +21,17 @@ public class CorrigirProvasClient {
 			int i = 0;
 				
 			System.out.print("Informe a quantidade de questoes: ");
-				int qntQuestoes = input.nextInt();
-				Questoes[] perguntas = new Questoes[qntQuestoes];
-				String respostasAlunos = "";
+			int qntQuestoes = input.nextInt();
+			Questoes[] perguntas = new Questoes[qntQuestoes];
+			String respostasAlunos = "";
 			
 		for(i=0;i<qntQuestoes;i++){
 			//System.out.print("Informe o número da questao: ");
-				//numQuestao[i] = input.nextInt();
+			//numQuestao[i] = input.nextInt();
 				
 			System.out.printf("Informe o número de alternativas da questao %d: ",i+1);
 				perguntas[i] = new Questoes();            
-                perguntas[i].setQntAlternativas(input.nextInt());
+				perguntas[i].setQntAlternativas(input.nextInt());
 				//numAlternativas[i] = input.nextInt();
 			
 			
